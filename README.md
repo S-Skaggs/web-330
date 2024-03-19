@@ -1,2 +1,4 @@
-# web-330
-Repository for my Web 330 class.
+# WEB 330 Enterprise JavaScript II
+## Contributors
+* Professor Richard Krasso 
+* Sheldon Skaggs
