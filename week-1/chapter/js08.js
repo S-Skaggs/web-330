@@ -27,6 +27,13 @@ function playDrawPoker() {
    pokerGame.currentBank = 500;
    pokerGame.currentBet = 25;
 
+   // Create a deck of shuffled cards
+   let myDeck = new pokerDeck();
+   myDeck.shuffle();
+
+   // Create an empty poker hand object
+   let myHand = new pokerHand(5);
+
    // Display the current bank value
    bankBox.value = pokerGame.currentBank;
 
@@ -38,15 +45,29 @@ function playDrawPoker() {
 
   dealButton.addEventListener("click", function() {
     if (pokerGame.currentBank >= pokerGame.currentBet) {
-        // Enable the Draw and Stand buttons after the initial deal
-        dealButton.disabled = true;        // Turn off the Deal button
-        betSelection.disabled = true;      // Turn off the Bet Selection list
-        drawButton.disabled = false;       // Turn on the Draw button
-        standButton.disabled = false;      // Turn on the Stand Button
-        statusBox.textContent = "";        // Erase any status messages
+      // Enable the Draw and Stand buttons after the initial deal
+      dealButton.disabled = true;        // Turn off the Deal button
+      betSelection.disabled = true;      // Turn off the Bet Selection list
+      drawButton.disabled = false;       // Turn on the Draw button
+      standButton.disabled = false;      // Turn on the Stand Button
+      statusBox.textContent = "";        // Erase any status messages
 
-        // Reduce the bank by the size of the bet
-        bankBox.value = pokerGame.placeBet();
+      // Reduce the bank by the size of the bet
+      bankBox.value = pokerGame.placeBet();
+
+      // Get a new deck if there are less than 10 cards left
+      if (myDeck.cards.length < 10) {
+        myDeck = new pokerDeck();
+        myDeck.shuffle();
+      }
+
+      // Deal 5 cards from the deck to the hand
+      myDeck.dealTo(myHand);
+
+      // Display the card images on the table
+      for (let i = 0; i < cardImages.length; i++) {
+        cardImages[i].src = myHand.cards[i].cardImage();
+      }
     } else {
       statusBox.textContent = "Insufficient Funds";
     }
