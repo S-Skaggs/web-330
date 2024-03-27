@@ -45,6 +45,7 @@ function createCharacter(name, gender, characterClass) {
 function validateForm() {
   let isValid = true;
   let errorMessages = "";
+
   // Validate the form
   if(document.getElementById("heroName").value === "") {
     errorMessages += "Provide a name your hero<br />";
@@ -58,6 +59,7 @@ function validateForm() {
     errorMessages += "Select a class for your hero";
     isValid = false;
   }
+
   if(!isValid) {
     // Display error message
     let characterOutput = document.getElementById("characterOutput");
