@@ -3,9 +3,52 @@
   Chapter 1
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Sheldon Skaggs
+  Date: 3/27/2024
+  Filename: styles.css
 */
 
 /* Your CSS goes here */
+/* Body Styles */
+body {
+  background-color: azure;
+  color: brown;
+}
+
+hr {
+  color: brown;
+}
+
+.centered {
+  width: 50%;
+  margin: 0px auto;
+}
+
+/* Form styles */
+#inputFields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#inputFields > div {
+  max-width: 200em;
+}
+
+#characterOutput {
+  margin-top: .3em;
+  background-color: black;
+  color: white;
+}
+/* Validaiton styles */
+.invalidForm {
+  padding-left: 1.2em;
+  padding-bottom: 1.2em;
+  border: inset 8px red;
+}
+
+/* Character readout styles */
+.characterReadout {
+  padding-left: 1.2em;
+  padding-bottom: 1.2em;
+  border: inset 8px yellow;
+}

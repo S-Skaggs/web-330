@@ -6,32 +6,42 @@
     Chapter 1
     Programming Assignment
 
-    Author:
-    Date:
-    Filename:
+    Author: Sheldon Skaggs
+    Date: 3/27/2024
+    Filename: index.html
   -->
     <title>Roleplay Character Generator</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
-    <div id="mainContainer">
+    <div id="mainContainer" class="centered">
+      <h1 class="centered">Hero Generator</h1>
       <form id="characterForm">
-        <label for="heroName">Hero Name:</label><br />
-        <input type="text" id="heroName" name="heroName" required /><br />
-        <label for="heroGender">Hero Gender:</label><br />
-        <select id="heroGender" name="heroGender" required>
-          <option value="">Select...</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option></select>
-          <br />
-        <label for="heroClass">Hero Class:</label><br />
-        <select id="heroClass" name="heroClass" required>
-          <option value="">Select...</option>
-          <option value="warrior">Warrior</option>
-          <option value="mage">Mage</option>
-          <option value="rogue">Rogue</option></select>
-          <br />
+        <section id="inputFields">
+          <div>
+            <label for="heroName">Hero Name:</label><br />
+            <input type="text" id="heroName" name="heroName" required /><br />
+          </div>
+          <div>
+            <label for="heroGender">Hero Gender:</label><br />
+            <select id="heroGender" name="heroGender" required>
+              <option value="">Select...</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option></select>
+            <br />
+          </div>
+          <div>
+            <label for="heroClass">Hero Class:</label><br />
+            <select id="heroClass" name="heroClass" required>
+              <option value="">Select...</option>
+              <option value="warrior">Warrior</option>
+              <option value="mage">Mage</option>
+              <option value="rogue">Rogue</option></select>
+              <br />
+          </div>
+        </section>
+        <hr>
         <button id="generateHero">Generate Hero</button>
       </form>
 
