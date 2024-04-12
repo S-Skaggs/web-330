@@ -53,17 +53,23 @@ function setupRoom() {
 
     // Grab a table from teh banquet hall
     function grabTable(e) {
-      startingX = e.clientX;
-      startingY = e.clientY;
-      e.target.style.touchAction = "none";
-      zIndexCounter++;
-      e.target.style.zIndex = zIndexCounter;
+      if(e.shiftKey) {
+        // Remove the table from the room
+        e.target.parentElement.removeChild(e.target);
+        countSeats();
+      } else {
+        startingX = e.clientX;
+        startingY = e.clientY;
+        e.target.style.touchAction = "none";
+        zIndexCounter++;
+        e.target.style.zIndex = zIndexCounter;
 
-      tableX = e.target.offsetLeft;
-      tableY = e.target.offsetTop;
+        tableX = e.target.offsetLeft;
+        tableY = e.target.offsetTop;
 
-      e.target.addEventListener("pointermove", moveTable);
-      e.target.addEventListener("pointerup", dropTable);
+        e.target.addEventListener("pointermove", moveTable);
+        e.target.addEventListener("pointerup", dropTable);
+      }
     }
 
     // Move the table along with the pointer
