@@ -6,23 +6,26 @@
       Chapter 2
       Programming Assignment
 
-      Author:
-      Date:
-      Filename:
+      Author: Sheldon Skaggs
+      Date: 4/19/2024
+      Filename: index.html
     -->
     <title>Table Reservation</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
     <div class="form-container">
+      <h1>Reservation Form</h1>
       <form id="reservationForm">
         <label for="name">Name:</label><br />
-        <input type="text" id="name" name="name" /><br />
+        <input type="text" id="name" name="name" required oninput="removeCustomValidity(this.id)" /><br /><br />
         <label for="tableNumber">Table Number:</label><br />
-        <input type="number" id="tableNumber" name="tableNumber" /><br />
-        <input type="submit" value="Reserve" />
+        <input type="number" id="tableNumber" name="tableNumber" required min="1" max="12" oninput="removeCustomValidity(this.id)" /><br /><br />
+        <div class="centeredText">
+          <input type="submit" value="Reserve" id="submitButton" />
+        </div>
       </form>
-      <p id="message"></p>
+      <p id="message" class="centeredText"></p>
     </div>
     <script src="script.js"></script>
   </body>

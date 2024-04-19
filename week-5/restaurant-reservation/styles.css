@@ -3,9 +3,50 @@
   Chapter 2
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Sheldon Skaggs
+  Date: 4/19/2024
+  Filename: style.css
 */
 
-/* Add your CSS styles here */
+/* CSS Reset */
+body, div, h1, p, form {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Body styles */
+body {
+  background-color: white;
+  color: black;
+}
+
+.form-container {
+  width: 45%;
+  margin: 0px auto;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+#message {
+  margin: 10px auto;
+  width: 50%;
+}
+
+/* Form Styles */
+#reservationForm {
+  max-width: 50%;
+  margin: 0px auto;
+  border-radius: 8px;
+  border: 1px solid #CDCDCD;
+  padding: 10px;
+}
+
+.form-container h1 {
+  color: blueviolet;
+  padding: 10px 0px 25px;
+  text-align: center;
+  text-decoration: underline;
+}
