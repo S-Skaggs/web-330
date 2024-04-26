@@ -39,4 +39,18 @@ function init() {
    xhr.open("get", "commentary.html");
    xhr.send(null);
 
+   // Retrieve archived articles from teh web server
+   sButton.onclick = () => {
+      fetch("archives.pl?skey=" + encodeURIComponent(sInput.value))
+      .then ( response => {
+         if (response.ok) {
+            return response.text;
+         } else {
+            return "Unable to retrieve commentary";
+         }
+      })
+      .then ( comtext => stories.innerHTML = comtext )
+      .catch (stories.innerHTML = "Network Failure");
+   }
+
 }
