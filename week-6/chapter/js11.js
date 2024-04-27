@@ -50,6 +50,10 @@ function init() {
          }
       })
       .then ( comtext => stories.innerHTML = comtext )
+      .then (() => {
+        let topic = sInput.value.toLowerCase();
+        getGif(topic);
+      })
       .catch (stories.innerHTML = "Network Failure");
    }
 
@@ -110,4 +114,17 @@ function init() {
     }
    }
 
+}
+
+// Fetch a gif for a given topic from Giphy.com
+function gitGif (topic) {
+  const url = "https://api.giphy.com/v1/gifs/random";
+  const key = "KEY_REDACTED";
+  fetch(`${url}?api_key=${key}&tag=${topic}&limit=1&rating=pg`)
+  .then(response => response.json())
+  .then(obj => {
+    let newImg = document.createElement("img");
+    newImg.src = object.data.images.fixed_height.url;
+    stories.appendChild(newImg)
+  })
 }
