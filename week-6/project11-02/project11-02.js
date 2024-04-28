@@ -1,0 +1,45 @@
+"use strict";
+/*    JavaScript 7th Edition
+      Chapter 11
+      Project 11-02
+
+      Project to city and state information from a provided postal code
+      Author: Sheldon Skaggs
+      Date:   4/27/2024
+
+      Filename: project11-02.js
+*/
+// Variables to reference input elements
+let postalCode = document.getElementById("postalCode");
+let place = document.getElementById("place");
+let region = document.getElementById("region");
+let country = document.getElementById("country");
+
+postalCode.onblur = function() {
+  // Variables to hold the values of input elements
+  let codeValue = postalCode.value;
+  let countryValue = country.value;
+
+  // Set the region and country element's value to empty string
+  place.value = "";
+  region.value = "";
+
+  // Create variable to use in Fetch
+  let url = `http://api.zippopotam.us/${countryValue}/${codeValue}`;
+
+  // Fetch the resource
+  fetch(url)
+  .then (response => response.json())
+  .then (json => {
+    // Set place and region values from returned json object
+    place.value = json.places[0]["place name"];
+    region.value = json.places[0]["state abbreviation"];
+  })
+  .catch (err => {
+    // Log any error to console
+    console.log(err.message)
+  })
+}
+
+
+
