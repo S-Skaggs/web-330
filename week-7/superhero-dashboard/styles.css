@@ -3,9 +3,58 @@
   Chapter 3
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author:   Sheldon Skaggs
+  Date:     5/4/2024
+  Filename: styles.css
 */
 
 /* Add your CSS styles here */
+/*
+  I liked how the previous chapter work
+  performed the box layout so I re-used it here.
+*/
+/* apply a natural box layout model to all elements */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* CSS Reset */
+html, body, div, p, {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Body Styles */
+body {
+  background-color: white;
+  color: black;
+}
+
+#readoutStatus {
+  width: 25%;
+  margin: 0px auto;
+}
+
+.heroDisplay {
+  width: 25%;
+  margin: 0px auto 10px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid #CDCDCD;
+}
+
+#superHeroReadout div:nth-child(odd) {
+  background-color: aliceblue;
+}
+
+#superHeroReadout div:nth-child(even) {
+  background-color: antiquewhite;
+}
+
+.errorMessage {
+  color: red;
+  font-weight: bolder;
+}
