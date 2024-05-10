@@ -3,9 +3,27 @@
   Chapter 4
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author:   Sheldon Skaggs
+  Date:     5/10/2024
+  Filename: styles.css
 */
 
-/* Add your styles here */
+/* apply a natural box layout model to all elements */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* CSS Reset */
+html, body, div, h2, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Body Styles */
+body {
+  background-color: white;
+  color: black;
+}

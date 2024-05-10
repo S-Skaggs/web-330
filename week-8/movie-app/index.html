@@ -6,17 +6,17 @@
       Chapter 4
       Programming Assignment
 
-      Author:
-      Date:
-      Filename:
+      Author:   Sheldon Skaggs
+      Date:     5/10/2024
+      Filename: index.html
     -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
     <div class="form-container">
       <form id="movie-form">
-        <input type="text" id="title-input" placeholder="Enter movie title" />
-        <button type="submit">Search</button>
+        <input type="text" id="title-input" placeholder="Enter movie title" required oninput="setCustomValidity('')" />
+        <button type="submit" id="btnSearch">Search</button>
       </form>
       <div id="movie-info">
         <h2 id="movie-title"></h2>
