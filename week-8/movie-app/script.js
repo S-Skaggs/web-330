@@ -125,7 +125,7 @@ const movies = [
     title: "Octopussy",
     director: "John Glen",
     releaseYear: 1983,
-    synopsis: "A fake Fabergé egg recovered from the body of a fellow agent leads James Bond to uncover a jewel smuggling operation led by the mysterious Octopussy, and a plot to blow up a NATO air base."
+    synopsis: "A fake Faberge egg recovered from the body of a fellow agent leads James Bond to uncover a jewel smuggling operation led by the mysterious Octopussy, and a plot to blow up a NATO air base."
   },
   {
     title: "A View to a Kill",
@@ -145,6 +145,9 @@ function resetDisplays() {
   document.getElementById("movie-year").textContent = "";
   document.getElementById("movie-synopsis").textContent = "";
   document.getElementById("error-message").textContent = "";
+
+  document.getElementById("error-message").style.display = "none";
+  document.getElementById("movie-info").style.display = "none";
 }
 
 // Function to validate the title-input
@@ -166,7 +169,7 @@ function fetchMovie(title) {
       if(movieIndex >= 0) {
         resolve(movies[movieIndex]);
       } else {
-        reject(`The move "${title}" was not found.`);
+        reject(`The movie "${title}" was not found.`);
       }
     }, 2000);
   });
@@ -183,11 +186,13 @@ document.getElementById("movie-form").addEventListener("submit", async (event) =
   try {
     let searchTitle = document.getElementById("title-input").value;
     let movie = await fetchMovie(searchTitle);
+    document.getElementById("movie-info").style.display = "block";
     document.getElementById("movie-title").textContent = movie.title;
     document.getElementById("movie-director").textContent = movie.director;
     document.getElementById("movie-year").textContent = movie.releaseYear;
     document.getElementById("movie-synopsis").textContent = movie.synopsis;
   } catch(err) {
+    document.getElementById("error-message").style.display = "block";
     document.getElementById("error-message").textContent = err;
   }
 });

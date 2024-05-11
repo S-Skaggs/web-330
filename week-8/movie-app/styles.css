@@ -27,3 +27,51 @@ body {
   background-color: white;
   color: black;
 }
+
+.form-container {
+  width: 25%;
+  min-width: 300px;
+  margin: 2% auto;
+  border: 2px solid aquamarine;
+  border-radius: 8px;
+  border-collapse: collapse;
+  padding: 20px 8px;
+}
+
+#movie-form {
+  text-align: center;
+}
+
+#movie-info {
+  margin-top: 8px;
+  padding: 3px;
+  background-image: linear-gradient(lightblue, aquamarine);
+  border: 1px dashed darkcyan;
+  border-radius: 8px;
+}
+
+#movie-info h2 {
+  padding-bottom: 2px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#movie-info p {
+  padding: 8px 4px;
+}
+
+#movie-director {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+#movie-synopsis {
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+#error-message {
+  text-align: center;
+  margin-top: 8px;
+  color: firebrick;
+}
