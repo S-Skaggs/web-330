@@ -13,5 +13,8 @@
 
 // Run once the page is loaded and ready
 $( () => {
-  //
+  // Add click events to each question in the FAQ
+  $("dl#faq dt").click( e => {
+    //
+  });
 });
